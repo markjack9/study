@@ -21432,8 +21432,8 @@ wx.getSetting({
 })
 ``` */
         getSetting<T extends GetSettingOption = GetSettingOption>(
-            option?: T
-        ): PromisifySuccessResult<T, GetSettingOption>
+            option?: { fail: (reason?: any) => void; success: (value: (PromiseLike<WechatMiniprogram.GetUserProfileSuccessCallbackResult> | WechatMiniprogram.GetUserProfileSuccessCallbackResult)) => void }
+        ): WechatMiniprogram.PromisifySuccessResult<T, WechatMiniprogram.GetSettingOption>
         /** [wx.getShareInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/share/wx.getShareInfo.html)
 *
 * 需要基础库： `1.1.0`
