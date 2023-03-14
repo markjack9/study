@@ -1,1 +1,21 @@
 /* pages/leancss/leancss.wxss */
+
+.list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 800rpx;
+    justify-content: space-around;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item.cu-avatar.xl{
+    width: unset;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
