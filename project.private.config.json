@@ -3,5 +3,18 @@
   "projectname": "wx",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "leancss",
+          "pathName": "pages/leancss/leancss",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }

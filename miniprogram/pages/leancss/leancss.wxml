@@ -1,0 +1,11 @@
+<!--pages/leancss/leancss.wxml-->
+<text wx:if="{{showPath}}">pages/leancss/leancss.wxml</text>
+<!-- <text wx:if="{{!showPath}}">learn css</text> -->
+<block wx:else>
+<text>css</text>
+</block>
+<view wx:for="{{values}}" wx:for-item="val" wx:key="id">
+<!-- wx:key的作用保存了id的值 -->
+employess is {{val.name}}
+<!--for循环-->
+</view>
