@@ -1,19 +1,27 @@
 /**index.wxss**/
-.userinfo {
+.map_style {
+  height: 1200rpx;
+  width: 100%;
+}
+.icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #aaa;
+  justify-content: space-between;
+  width: 87rpx;
+  margin-top: 20rpx;
+  height: 200rpx;
+  opacity: .7;
 }
-
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.usermotto {
-  margin-top: 200px;
+.btn-container {
+  /**扫一扫按钮的样式**/
+  width: 600rpx;
+  display: flex;
+  margin-left: 74rpx;
+  bottom: 7%;
+  position: absolute;
+  height: 60rpx;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
 }
