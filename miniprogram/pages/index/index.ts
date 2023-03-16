@@ -64,6 +64,18 @@ Page({
             }
         })
     },
+    onScanClicked(){
+      wx.scanCode({
+         success: () => {
+             wx.navigateTo(
+                 {
+                     url: '/pages/register/register',
+                 }
+             )
+         }
+
+      })
+    },
     onShow() {
         this.isPageShowing = true;
     },

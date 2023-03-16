@@ -15,7 +15,7 @@
         <!--添加左上角的用户头像和获取当前定位按钮-->
         <cover-image class="icon-container location" src="/resources/my_location.png" bindtap="onMyLocationTap">my location</cover-image>
     </cover-view>
-    <cover-view class="btn-container bg-grey round" bindtap="moveCars">
+    <cover-view class="btn-container bg-grey round" bindtap="onScanClicked">
         <cover-view>扫一扫</cover-view>
     </cover-view>
 </map>
