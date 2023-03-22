@@ -5,6 +5,7 @@ const app = getApp<IAppOption>()
 Page({
     isPageShowing: false,
     data: {
+        avatarURL: '',
         setting: {
             skew: 0,
             rotate: 0,
@@ -64,17 +65,17 @@ Page({
             }
         })
     },
-    onScanClicked(){
-      wx.scanCode({
-         success: () => {
-             wx.navigateTo(
-                 {
-                     url: '/pages/register/register',
-                 }
-             )
-         }
+    onScanClicked() {
+        wx.scanCode({
+            success: () => {
+                wx.navigateTo(
+                    {
+                        url: '/pages/register/register',
+                    }
+                )
+            }
 
-      })
+        })
     },
     onShow() {
         this.isPageShowing = true;
@@ -109,6 +110,14 @@ Page({
             })
         }
         moveCar()
+    },
+    async onLoad(e:any) {
+        const userinfo: WechatMiniprogram.UserInfo = e.detail.userInfo
+
+        this.setData({
+            avatarURL: userinfo.avatarUrl
+        })
+        console.log(this.data.avatarURL)
     }
 
 

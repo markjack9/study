@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/leancss/leancss",
     "pages/register/register",
-    "pages/lock/lock"
+    "pages/lock/lock",
+    "pages/driving/drving"
   ],
   "permission": {
     "scope.userLocation": {

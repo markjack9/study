@@ -1,1 +1,24 @@
 /* pages/lock/lock.wxss */
+
+.butum-locak {
+    display: flex;
+    flex-direction: column;
+    font-size: 50rpx;
+    text-align: center;
+    margin-top: 100rpx;
+}
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.static {
+    text-align: center;
+    height: 600rpx;
+}
+.switch-aratar{
+    display: flex;
+    align-items: center;
+    width: 8em;
+    justify-content: space-between;
+}

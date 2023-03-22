@@ -22,7 +22,7 @@ Page({
                         this.setData({
                             licNo: '123123123',
                             name: 'Mark',
-                            gendersIndex: 1,
+                            gendersIndex: 0,
                             birthDate: '1970-05-09',
                         }, 1000);
                     })

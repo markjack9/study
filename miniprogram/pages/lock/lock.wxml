@@ -1,2 +1,31 @@
 <!--pages/lock/lock.wxml-->
-<text>pages/lock/lock.wxml</text>
+<view>
+    <view class="static">
+        <image src="/resources/sedan.png"></image>
+
+        <view>驾驶安全是用户的责任</view>
+        <view>请将车辆停放在停车位内</view>
+    </view>
+    <view class="avatar-container">
+
+        <view wx:if="{{!avatarURL}}" class="cu-avatar xl round">
+            <button  open-type="getUserInfo"
+                    bindgetuserinfo="onGetUserInfo">
+                <text class="cuIcon-people"></text>
+            </button>
+        </view>
+
+        <view wx:if="{{avatarURL}}" class="switch-aratar">
+            <image  src="{{avatarURL}}"  class="cu-avatar xl round witch-savatar"></image>
+            <switch  checked="{{shareLocation}}" bindtap="onShareLocation"></switch>
+        </view>
+
+
+        <view class="margin-top">实时展示我的头像</view>
+
+
+    </view>
+    <button class="cu-btn bg-grey lg butum-locak" style="width: 80%;" bindtap="onOpenlockd">
+        点击开锁
+    </button>
+</view>
