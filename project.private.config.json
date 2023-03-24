@@ -31,13 +31,20 @@
         {
           "name": "",
           "pathName": "pages/lock/lock",
-          "query": "",
+          "query": "car_id=demo_car",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
           "pathName": "pages/driving/drving",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mytrips/mytrips",
           "query": "",
           "launchMode": "default",
           "scene": null

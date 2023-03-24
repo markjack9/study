@@ -1,6 +1,9 @@
 // pages/register/register.ts
+import {routing} from "../../utils/routing";
+
 Page({
     data: {
+        redirectURL: '',
         licNo: '',
         name: '',
         gendersIndex: 0,
@@ -31,6 +34,12 @@ Page({
             }
         })
     },
+    onLoad(opt: Record<'redirect', string>) {
+        const o: routing.RegisterOpts = opt
+        if (o.redirect) {
+            this.data.redirectURL = decodeURIComponent(o.redirect)
+        }
+    },
     onGenderChange(e: any) {
         this.setData({
             gendersIndex: e.detail.value,
@@ -56,15 +65,18 @@ Page({
             state: 'UNSUBMITTED',
             LicImgURL: '',
             check_state: false,
-                    })
+        })
     },
     onLicVerified() {
         this.setData({
             state: 'VERIFIED',
             check_state: true,
         })
-        wx.redirectTo({
-            url: '/pages/lock/lock',
-        })
+        if (this.data.redirectURL) {
+            wx.redirectTo({
+                url: this.data.redirectURL,
+            })
+        }
+
     }
 })

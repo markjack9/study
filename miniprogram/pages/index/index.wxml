@@ -11,8 +11,8 @@
             class="map_style"
     >
     <cover-view class="icon-container">
-        <cover-image wx:if="{{!avatarURL}}" class="icon-container account" src="/resources/account.png">my profile</cover-image>
-        <cover-image wx:if="{{avatarURL}}" class="icon-container account" src="{{avatarURL}}">my profile</cover-image>
+        <cover-image class="icon-container account" src="{{avatarURL?avatarURL:'/resources/account.png'}}" bindtap="onMYTripsTap" >my profile</cover-image>
+
         <!--添加左上角的用户头像和获取当前定位按钮-->
         <cover-image class="icon-container location" src="/resources/my_location.png" bindtap="onMyLocationTap">my location</cover-image>
     </cover-view>

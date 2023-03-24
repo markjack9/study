@@ -4,7 +4,8 @@
     "pages/leancss/leancss",
     "pages/register/register",
     "pages/lock/lock",
-    "pages/driving/drving"
+    "pages/driving/drving",
+    "pages/mytrips/mytrips"
   ],
   "permission": {
     "scope.userLocation": {

@@ -1,5 +1,7 @@
 // pages/lock/lock.ts
 
+import {routing} from "../../utils/routing";
+
 Page({
     data: {
         avatarURL: '',
@@ -13,7 +15,10 @@ Page({
     //     // 查看是否授权
 
     // },
-    onLoad() {
+    onLoad(opt:Record<'car_id', string>) {
+
+        const o: routing.LockOpts = opt
+        console.log('unlocking car', o.car_id)
         wx.getSetting({
             success(res) {
                 if (res.authSetting['scope.userInfo']) {
@@ -47,13 +52,17 @@ Page({
                 })
             }
         })
+        const tripID = 'trip456'
         wx.showLoading({
            title: '开锁中',
             mask: true,
         })
         setTimeout(()=> {
        wx.redirectTo({
-           url: '/pages/driving/drving',
+           // url: `/pages/driving/drving?trip_id=${tripID}`,
+           url: routing.drving({
+               trip_id: tripID
+           }),
            complete: () => {
                wx.hideLoading()
            }

@@ -1,5 +1,7 @@
 // index.ts
 // 获取应用实例
+import {myregis, routing} from "../../utils/routing";
+
 const app = getApp<IAppOption>()
 
 Page({
@@ -68,14 +70,30 @@ Page({
     onScanClicked() {
         wx.scanCode({
             success: () => {
+                const carID = 'car123'
+                // const redirectURL=`/pages/lock/lock?car_id=${car_id}`
+                const redirectURL = routing.lock({
+                    car_id: carID,
+                })
                 wx.navigateTo(
                     {
-                        url: '/pages/register/register',
+                        // url: `/pages/register/register?redirect=${encodeURIComponent(redirectURL)}`,
+                        url: routing.register({
+                            redirectURL: redirectURL,
+                        })
                     }
                 )
             }
 
         })
+    },
+    onMYTripsTap() {
+        const myregisURL = routing.myregis()
+        wx.navigateTo(
+            {
+                url: myregisURL,
+            }
+        )
     },
     onShow() {
         this.isPageShowing = true;
@@ -111,7 +129,7 @@ Page({
         }
         moveCar()
     },
-    async onLoad(e:any) {
+    async onLoad(e: any) {
         const userinfo: WechatMiniprogram.UserInfo = e.detail.userInfo
 
         this.setData({

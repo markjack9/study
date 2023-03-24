@@ -1,5 +1,7 @@
 // pages/driving/drving.ts
 
+import {routing} from "../../utils/routing";
+
 const centPerSec = 0.7
 
 
@@ -36,7 +38,9 @@ Page({
     onEndTripTap() {
 
     },
-    onLoad() {
+    onLoad(opt: Record<'trip_id', string>) {
+        const o: routing.DrivingOpts = opt
+        console.log('current trip', o.trip_id)
         this.setupLocationUpdate()
         this.setupTimer()
     },
