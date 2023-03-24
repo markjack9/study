@@ -41,13 +41,11 @@ onSwiperChange(){
         }
     },
     onRegisterTap(){
-        const redirectURL = routing.register()
+
         wx.navigateTo(
             {
                 // url: `/pages/register/register?redirect=${encodeURIComponent(redirectURL)}`,
-                url: routing.register({
-                    redirectURL: redirectURL,
-                })
+                url: routing.register(),
             }
         )
     }
