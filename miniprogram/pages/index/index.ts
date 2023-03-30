@@ -46,7 +46,8 @@ Page({
                 width: 50,
                 height: 50
             }
-        ]
+        ],
+
     },
     onMyLocationTap() {
         wx.getLocation({
@@ -69,7 +70,8 @@ Page({
     },
     onScanClicked() {
         wx.scanCode({
-            success: () => {
+            success: async () => {
+               await this.selectComponent('#licModal').showModal()
                 const carID = 'car123'
                 // const redirectURL=`/pages/lock/lock?car_id=${car_id}`
                 const redirectURL = routing.lock({
@@ -83,6 +85,15 @@ Page({
                         })
                     }
                 )
+                // wx.showModal({
+                //     title: '身份认证',
+                //     content: '认证成功才能进行使用',
+                //     success: () => {
+                //
+                //     }
+                // })
+
+
             }
 
         })
@@ -136,7 +147,9 @@ Page({
             avatarURL: userinfo.avatarUrl
         })
         console.log(this.data.avatarURL)
+    },
+    onModalOk(){
+        console.log('ok clicked')
     }
-
 
 })

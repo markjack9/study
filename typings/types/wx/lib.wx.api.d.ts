@@ -18648,7 +18648,7 @@ const deviceInfo = wx.getDeviceInfo()
 console.log(deviceInfo.abi)
 console.log(deviceInfo.benchmarkLevel)
 console.log(deviceInfo.brand)
-console.log(deviceInfo.model)
+console.log(deviceInfo.modal)
 console.log(deviceInfo.platform)
 console.log(deviceInfo.system)
 ``` */
@@ -18833,7 +18833,7 @@ try {
 * ```js
 wx.getSystemInfo({
   success (res) {
-    console.log(res.model)
+    console.log(res.modal)
     console.log(res.pixelRatio)
     console.log(res.windowWidth)
     console.log(res.windowHeight)
@@ -18847,7 +18847,7 @@ wx.getSystemInfo({
 * ```js
 try {
   const res = wx.getSystemInfoSync()
-  console.log(res.model)
+  console.log(res.modal)
   console.log(res.pixelRatio)
   console.log(res.windowWidth)
   console.log(res.windowHeight)
@@ -21554,7 +21554,7 @@ try {
 * ```js
 wx.getSystemInfo({
   success (res) {
-    console.log(res.model)
+    console.log(res.modal)
     console.log(res.pixelRatio)
     console.log(res.windowWidth)
     console.log(res.windowHeight)
@@ -21568,7 +21568,7 @@ wx.getSystemInfo({
 * ```js
 try {
   const res = wx.getSystemInfoSync()
-  console.log(res.model)
+  console.log(res.modal)
   console.log(res.pixelRatio)
   console.log(res.windowWidth)
   console.log(res.windowHeight)
@@ -21597,7 +21597,7 @@ try {
 * ```js
 wx.getSystemInfoAsync({
   success (res) {
-    console.log(res.model)
+    console.log(res.modal)
     console.log(res.pixelRatio)
     console.log(res.windowWidth)
     console.log(res.windowHeight)

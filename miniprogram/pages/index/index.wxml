@@ -20,3 +20,6 @@
         <cover-view>扫一扫</cover-view>
     </cover-view>
 </map>
+
+<modal id="licModal"
+ title="身份验证" contents="需要身份认证后才能租车" bindok="onModalOk"></modal>

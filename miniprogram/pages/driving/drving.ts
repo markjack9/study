@@ -17,7 +17,7 @@ function formatDuration(sec: number) {
     return `${padString(h)}:${padString(m)}:${padString(s)}`
 }
 
-function formatFee(cents: number){
+function formatFee(cents: number) {
     //cents = 1.2345
     //toFixed(2) = 1.23
     return (cents / 100).toFixed(2)
@@ -25,7 +25,7 @@ function formatFee(cents: number){
 
 //定义一个格式化时间函数
 Page({
-    timer: undefined as number| undefined,
+    timer: undefined as number | undefined,
     data: {
         location: {
             latitude: 25.04428,
@@ -36,7 +36,9 @@ Page({
         fee: '0.00',
     },
     onEndTripTap() {
-
+        wx.redirectTo({
+            url: routing.myregis(),
+        })
     },
     onLoad(opt: Record<'trip_id', string>) {
         const o: routing.DrivingOpts = opt
@@ -46,7 +48,7 @@ Page({
     },
     onUnload() {
         wx.stopLocationUpdate()
-        if (this.timer){
+        if (this.timer) {
             clearInterval(this.timer)
         }
     },
@@ -66,7 +68,7 @@ Page({
     setupTimer() {
         let elapsedSec = 0
         let cents = 0
-       this.timer= setInterval(() => {
+        this.timer = setInterval(() => {
             elapsedSec++
             cents += centPerSec
             this.setData({
