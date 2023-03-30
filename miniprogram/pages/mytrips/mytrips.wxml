@@ -1,6 +1,6 @@
 <!--pages/mytrips/mytrips.wxml-->
 
-<view>
+<view id="heading">
 
     <swiper indicator-dots="{{indicatorDots}}"
             autoplay="{{autoPlay}}"
@@ -12,7 +12,7 @@
             next-margin="{{nextMargin}}"
             vertical="{{vertical}}"
             current="{{current}}"
-            bindchange="onSwiperChange">
+            bindchange="">
     <swiper-item wx:for="{{promotionItems}}" wx:key="promotionID"
     bindtap="onPromotionItemTap"
     data-promotion-id="{{item.promotionID}}">
@@ -31,6 +31,54 @@
         </view>
         <view class="text-blue" bindtap="onRegisterTap">驾驶资格{{licStatus}}</view>
     </view>
+</view>
+<view class="nav-container">
+    <swiper class="bg-white" duration="500" display-multiple-items="{{navCount}}"
+    vertical style="height:1500rpx" current-item-id="{{navScroll}}">
+<swiper-item class="cu-item swiper-item-height {{navSel===item.id?'text-green':''}}" wx:for="{{navItems}}" wx:key="id"
+             item-id="{{item.id}}" data-main-id="{{item.mainId}}" data-id="{{item.id}}"
+    bindtap="onNavItemTap">
+    <view class="nav-container-label">{{item.label}}</view>
+    <view wx:if="{{navSel===item.id}}" class="cur"></view>
+
+</swiper-item>
+    </swiper>
+<scroll-view scroll-y="true" scroll-with-animation enable-back-to-top
+             style="height:1500px"  scroll-into-view="{{mainScroll}}" bindscroll="onMainScroll">
+    <view wx:for="{{mainItems}}" wx:key="id" class="trip" id="{{item.id}}" item-id="{{item.id}}" data-nav-id="{{item.navId}}" data-nav-scroll-id="{{item.navScrollId}}">
+        <view class="cu-bar solid-bottom bg-white padding-right ">
+            <view class="action id-bottom main-padding-with">
+                <text class="cuIcon-title text-green">{{item.data.id}}</text>
+                <view class="main-padding-with">{{item.data.status}}</view>
+
+            </view>
+            <view class="trip-detail ">
+                <view class="detail-l">
+                    <view class="detail-row">
+                        <view class="field padding-lr">起</view>
+                        <view class="value text-black text-bold">{{item.data.start}}</view>
+                    </view>
+                    <view wx:if="{{!item.data.inProgress}}" class="detail-row">
+                        <view class="field padding-lr">终</view>
+                        <view class="value text-black text-bold">{{item.data.end}}</view>
+                    </view>
+                    <view wx:if="{{!item.data.inProgress}}" class="detail-row">
+                        <view class="field padding-lr">距</view>
+                        <view class="value text-black text-bold">{{item.data.distance}}</view>
+                    </view>
+                    <view wx:if="{{!item.data.inProgress}}" class="detail-row">
+                        <view class="field padding-lr">时</view>
+                        <view class="value text-black text-bold">{{item.data.duration}}</view>
+                    </view>
+                </view>
+                <view wx:if="{{!item.data.inProgress}}" class="detail-r">
+                    <view class="fee text-xxl text-price text-bold">{{item.data.fee}}</view>
+
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
 </view>
 
 

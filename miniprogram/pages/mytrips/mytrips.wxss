@@ -32,6 +32,7 @@ swiper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .mytrips-heading {
@@ -46,13 +47,18 @@ swiper {
 }
 
 .nav-container swiper {
-    width: 200rpx;
+    width: 120rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-radius: 25rpx;
+
 }
 
 .nav .cu-item {
     margin: unset;
     padding: unset;
     text-align: center;
+
 }
 
 .cur {
@@ -64,8 +70,57 @@ swiper {
     right: 0rpx;
     bottom: 0;
     margin: auto;
+    margin-bottom: 10rpx;
 }
 
 .in-progress {
     font-style: italic;
+}
+
+.padding-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20rpx;
+    border-radius: 25rpx;
+    height: 100%;
+   padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    justify-content: space-between;
+
+}
+.id-bottom {
+    margin-bottom: 30rpx;
+    margin-left: 0.5em;
+}
+.padding-right-status {
+    width: 100%;
+    margin-right: 30rpx;
+}
+
+
+.main-padding-with{
+    width: 100%;
+    justify-content: space-between;
+}
+.nav-container-label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10rpx;
+}
+.cur {
+
+    width: 8rpx;
+
+    border-radius: 10rpx 0 0 10rpx;
+    position: absolute;
+    background-color: currentColor;
+    top: 0;
+    right: 0rpx;
+    bottom: 0;
+    margin: auto;
+}
+.swiper-item-height {
+    height: 25%!important;
 }
