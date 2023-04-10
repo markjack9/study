@@ -18,7 +18,7 @@ const formatNumber = (n: number) => {
   return s[1] ? s : '0' + s
 }
 
-export function getSetting(): Promise<WechatMiniprogram.GetUserProfileSuccessCallbackResult>{
+export function getSetting(): Promise<WechatMiniprogram.GetUserInfoSuccessCallbackResult>{
   //使用export可以给其他文件调用函数
 return new Promise((resolve, reject) => {
   wx.getSetting({
@@ -27,7 +27,7 @@ return new Promise((resolve, reject) => {
   })
 })
 }
-export function getUserInfo(): Promise<WechatMiniprogram.GetUserProfileSuccessCallbackResult>{
+export function getUserInfo(): Promise<WechatMiniprogram.GetUserInfoSuccessCallbackResult>{
   return  new Promise((resolve, reject) => {
 wx.getUserInfo({
   success: resolve,

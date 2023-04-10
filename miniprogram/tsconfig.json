@@ -17,14 +17,12 @@
     "strict": true,
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
-    "typeRoots": [
-      "./typings"
-    ]
+    "types": ["miniprogram-api-typings"]
   },
   "include": [
     "./**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules/"
   ]
 }

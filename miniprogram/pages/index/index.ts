@@ -1,8 +1,8 @@
 // index.ts
 // 获取应用实例
-import {myregis, routing} from "../../utils/routing";
+import {routing} from "../../utils/routing";
 
-const app = getApp<IAppOption>()
+
 
 Page({
     isPageShowing: false,

@@ -4,7 +4,7 @@
     "ignore": [],
     "include": []
   },
-  "miniprogramRoot": "miniprogram/",
+  "miniprogramRoot": "",
   "compileType": "miniprogram",
   "projectname": "ts-demo",
   "setting": {
@@ -22,7 +22,7 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {},
-  "srcMiniprogramRoot": "miniprogram/",
+  "srcMiniprogramRoot": "",
   "appid": "wxfc028948237096f1",
   "libVersion": "2.30.1",
   "editorSetting": {
